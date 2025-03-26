@@ -27,4 +27,25 @@ const todoList = [
   },
 ];
 
+const insert = document.querySelector('#target');
+for (let task of todoList) {
+  if (task.completed == true) {
+    insert.insertAdjacentHTML(
+      'beforeend',
+      `<li>
+        <input type="checkbox" id="todo-${task.id}" checked>
+        <label for="todo-${task.id}">${task.task}</label>
+      </li>`
+    );
+  } else {
+    insert.insertAdjacentHTML(
+      'beforeend',
+      `<li>
+        <input type="checkbox" id="todo-${task.id}">
+        <label for="todo-${task.id}">${task.task}</label>
+      </li>`
+    );
+  }
+}
+//insert.insertAdjacentHTML('beforeend', '<li>viljao</li>');
 // add your code here
