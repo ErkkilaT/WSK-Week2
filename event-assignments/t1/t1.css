@@ -6,7 +6,7 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  width: 15rem;
+  width: 20rem;
 }
 
 li {
@@ -23,7 +23,7 @@ label {
 }
 
 li button {
-  width: 2rem;
+  width: 4rem;
   height: 3rem;
   background-color: rgb(255, 0, 0);
   color: #fff;
@@ -34,7 +34,7 @@ li button {
 
 li input {
   position: absolute;
-  margin: 1rem 3rem;
+  margin: 1rem 5rem;
   cursor: pointer;
 }
 
