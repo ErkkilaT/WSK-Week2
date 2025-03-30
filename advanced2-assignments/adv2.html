@@ -10,11 +10,18 @@
 
   <body>
     <h1>Restaurants</h1>
-    <table>
+    <label for="companySelect">Filter by company:</label>
+    <select name="Company" id="companySelect">
+      <option value="Compass Group">Compass Group</option>
+      <option value="Sodexo">Sodexo</option>
+    </select>
+    <input type="button" value="Filter" id="filter-btn" />
+    <table id="restaurant-table">
       <tr>
         <th>Name</th>
         <th>Address</th>
         <th>City</th>
+        <th>Company</th>
       </tr>
       <!-- add restaurants here -->
     </table>

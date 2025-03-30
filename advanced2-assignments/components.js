@@ -2,31 +2,32 @@ const restaurantRow = (restaurant) => {
   const {name, address, city, company} = restaurant;
   const tr = document.createElement('tr');
   const nameTd = document.createElement('td');
-  nameTd.innerText = restaurant.name;
+  nameTd.innerText = name;
   const addressTd = document.createElement('td');
-  addressTd.innerText = restaurant.address;
+  addressTd.innerText = address;
   const cityTd = document.createElement('td');
-  cityTd.innerText = restaurant.city;
+  cityTd.innerText = city;
   const companyTd = document.createElement('td');
   companyTd.innerText = company;
-  tr.append(nameTd, addressTd, cityTd);
+  tr.append(nameTd, addressTd, cityTd, companyTd);
   return tr;
 };
 
 const restaurantModal = (restaurant, menu) => {
+  const {name, address, city, company, postalCode, phone} = restaurant;
   //restaurant info
   const nameH3 = document.createElement('h3');
-  nameH3.innerText = restaurant.name;
+  nameH3.innerText = name;
   const addressP = document.createElement('p');
-  addressP.innerText = restaurant.address;
+  addressP.innerText = address;
   const postalCodeP = document.createElement('p');
-  postalCodeP.innerText = restaurant.postalCode;
+  postalCodeP.innerText = postalCode;
   const cityP = document.createElement('p');
-  cityP.innerText = restaurant.city;
+  cityP.innerText = city;
   const phoneNumberP = document.createElement('p');
-  phoneNumberP.innerText = restaurant.phone;
+  phoneNumberP.innerText = phone;
   const companyP = document.createElement('p');
-  companyP.innerText = restaurant.company;
+  companyP.innerText = company;
   const div1 = document.createElement('div');
   div1.append(nameH3, addressP, postalCodeP, cityP, phoneNumberP, companyP);
 
@@ -42,7 +43,7 @@ const restaurantModal = (restaurant, menu) => {
     errorP.innerText = 'Error! No available menu for this restaurant';
     div2.append(errorP);
   } else {
-    for (let course of menu.courses) {
+    menu.courses.forEach((course) => {
       const dialogTr = document.createElement('tr');
       const courseName = document.createElement('td');
       const coursePrice = document.createElement('td');
@@ -53,7 +54,7 @@ const restaurantModal = (restaurant, menu) => {
 
       dialogTr.append(courseName, coursePrice, courseAllergies);
       dialogTable.append(dialogTr);
-    }
+    });
     div2.append(dialogTable);
   }
 
