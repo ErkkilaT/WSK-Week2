@@ -1,31 +1,32 @@
 const restaurantRow = (restaurant) => {
-  const {name, address, city} = restaurant;
+  const {name, address, city, company} = restaurant;
   const tr = document.createElement('tr');
   const nameTd = document.createElement('td');
-  nameTd.innerText = name;
+  nameTd.innerText = restaurant.name;
   const addressTd = document.createElement('td');
-  addressTd.innerText = address;
+  addressTd.innerText = restaurant.address;
   const cityTd = document.createElement('td');
-  cityTd.innerText = city;
+  cityTd.innerText = restaurant.city;
+  const companyTd = document.createElement('td');
+  companyTd.innerText = company;
   tr.append(nameTd, addressTd, cityTd);
   return tr;
 };
 
 const restaurantModal = (restaurant, menu) => {
-  const {name, address, postalCode, city, phone, company} = restaurant;
   //restaurant info
   const nameH3 = document.createElement('h3');
-  nameH3.innerText = name;
+  nameH3.innerText = restaurant.name;
   const addressP = document.createElement('p');
-  addressP.innerText = address;
+  addressP.innerText = restaurant.address;
   const postalCodeP = document.createElement('p');
-  postalCodeP.innerText = postalCode;
+  postalCodeP.innerText = restaurant.postalCode;
   const cityP = document.createElement('p');
-  cityP.innerText = city;
+  cityP.innerText = restaurant.city;
   const phoneNumberP = document.createElement('p');
-  phoneNumberP.innerText = phone;
+  phoneNumberP.innerText = restaurant.phone;
   const companyP = document.createElement('p');
-  companyP.innerText = company;
+  companyP.innerText = restaurant.company;
   const div1 = document.createElement('div');
   div1.append(nameH3, addressP, postalCodeP, cityP, phoneNumberP, companyP);
 
